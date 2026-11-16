@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriCheck | Medical NLP</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <header class="navbar">
+    <div class="brand">
+      <div class="logo">N</div>
+      <div>
+        <div class="brand-name">NutriCheck</div>
+        <div class="brand-subtitle">Medical NLP Intelligence</div>
+      </div>
+    </div>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      System Ready
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">PORTUGUESE MEDICAL RECORD ANALYSIS</span>
+        <h1>Turn medical text into<br><span>structured insight.</span></h1>
+        <p>
+          Extract symptoms, medications, treatments, conditions, diagnoses and examinations
+          from unstructured medical records using Natural Language Processing.
+        </p>
+      </div>
+      <div class="hero-badge">
+        <div class="pulse-ring"></div>
+        <span>NER + ML</span>
+        <small>AI Pipeline</small>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="input-panel panel">
+        <div class="panel-header">
+          <div>
+            <span class="section-number">01</span>
+            <h2>Medical Record</h2>
+          </div>
+          <button class="ghost-btn" id="sampleBtn">Load Sample</button>
+        </div>
+
+        <label for="medicalText">Enter Portuguese medical text</label>
+        <textarea id="medicalText" placeholder="Cole aqui o registro médico em português..."></textarea>
+
+        <div class="input-footer">
+          <span id="charCount">0 characters</span>
+          <span>Supports Portuguese text</span>
+        </div>
+
+        <button class="analyze-btn" id="analyzeBtn">
+          <span class="btn-icon">✦</span>
+          Analyze Medical Record
+          <span class="arrow">→</span>
+        </button>
+        <div class="error-box" id="errorBox"></div>
+      </div>
+
+      <div class="results-panel panel">
+        <div class="panel-header">
+          <div>
+            <span class="section-number">02</span>
+            <h2>Extracted Information</h2>
+          </div>
+          <span class="result-status" id="resultStatus">Waiting for analysis</span>
+        </div>
+
+        <div class="entity-grid">
+          <div class="entity-card symptom">
+            <div class="entity-top"><span class="entity-icon">⌁</span><span>SYMPTOMS</span></div>
+            <div class="entity-value" id="symptoms">—</div>
+          </div>
+          <div class="entity-card medication">
+            <div class="entity-top"><span class="entity-icon">✚</span><span>MEDICATIONS</span></div>
+            <div class="entity-value" id="medications">—</div>
+          </div>
+          <div class="entity-card treatment">
+            <div class="entity-top"><span class="entity-icon">◇</span><span>TREATMENTS</span></div>
+            <div class="entity-value" id="treatments">—</div>
+          </div>
+          <div class="entity-card condition">
+            <div class="entity-top"><span class="entity-icon">◈</span><span>CONDITIONS</span></div>
+            <div class="entity-value" id="conditions">—</div>
+          </div>
+          <div class="entity-card diagnosis">
+            <div class="entity-top"><span class="entity-icon">◎</span><span>DIAGNOSES</span></div>
+            <div class="entity-value" id="diagnosis">—</div>
+          </div>
+          <div class="entity-card exam">
+            <div class="entity-top"><span class="entity-icon">⌕</span><span>EXAMINATIONS</span></div>
+            <div class="entity-value" id="exams">—</div>
+          </div>
+        </div>
+
+        <div class="allergy-card">
+          <div>
+            <span class="mini-label">ML CLASSIFICATION</span>
+            <h3>Medication Allergy Risk</h3>
+          </div>
+          <div>
+            <div class="risk-pill" id="allergyResult">Not analyzed</div>
+            <div id="allergyConfidence" style="margin-top:8px;font-size:0.82rem;opacity:0.75;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pipeline">
+      <div class="pipeline-heading">
+        <span class="eyebrow">PROCESSING PIPELINE</span>
+        <h2>From free text to actionable structure</h2>
+      </div>
+      <div class="steps">
+        <div class="step active">
+          <span>01</span><strong>Input</strong><small>Medical record</small>
+        </div>
+        <div class="connector"></div>
+        <div class="step">
+          <span>02</span><strong>NER</strong><small>Entity extraction</small>
+        </div>
+        <div class="connector"></div>
+        <div class="step">
+          <span>03</span><strong>Features</strong><small>Structured data</small>
+        </div>
+        <div class="connector"></div>
+        <div class="step">
+          <span>04</span><strong>ML Model</strong><small>Allergy prediction</small>
+        </div>
+        <div class="connector"></div>
+        <div class="step">
+          <span>05</span><strong>Output</strong><small>Clinical insight</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>NutriCheck</span>
+    <span>Natural Language Processing • Medical Information Extraction</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
